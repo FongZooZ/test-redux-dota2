@@ -1,4 +1,6 @@
-export const HeroConstant = {
+export const HeroConstants = {
 	FETCH_ALL: 'FETCH_ALL',
-	REMOVE_ALL: 'REMOVE_ALL'
+	REMOVE_ALL: 'REMOVE_ALL',
+	FETCH_ALL_ERROR: 'FETCH_ALL_ERROR',
+	FETCH_ALL_SUCCESS: 'FETCH_ALL_SUCCESS'
 };

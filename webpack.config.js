@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './app/index.js',
+  entry: ['babel-polyfill', './app/index.js'],
   output: {
     filename: './app/bundle.js'
   },
@@ -10,7 +10,7 @@ module.exports = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['env', 'es2015', 'react']
+          presets: ['env', 'es2015', 'stage-0', 'react']
         }
       }
     }]
