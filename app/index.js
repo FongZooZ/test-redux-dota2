@@ -14,14 +14,9 @@ const middleware = [logger, thunk];
 const store = createStore(reducer, applyMiddleware(...middleware));
 
 class App extends Component {
-	constructor() {
-		super();
-	}
-
 	render() {
-		let { heroes } = this.props;
 		return (
-			<ConnectedHome heros={heroes} />
+			<ConnectedHome />
 		);
 	}
 }

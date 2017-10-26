@@ -15,14 +15,14 @@ export const fetchHeroes = () => {
 	};
 };
 
-export const fetchHeroesSuccess = (response) => {
+const fetchHeroesSuccess = (response) => {
 	return {
 		type: HeroConstants.FETCH_ALL_SUCCESS,
 		payload: response.data
 	};
 };
 
-export const fetchHeroesError = (err) => {
+const fetchHeroesError = (err) => {
 	return {
 		type: HeroConstants.FETCH_ALL_ERROR,
 		payload: err

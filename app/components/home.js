@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import { fetchHeroes, removeHeroes } from '../actions/heroes';
 import PropTypes from 'prop-types';
+
+import { fetchHeroes, removeHeroes } from '../actions/heroes';
 
 class Home extends Component {
 	render() {
-		let data = this.props.heroes;
+		let heroes = this.props.heroes;
+		console.log(heroes);
+
 		return (
 			<div id="home">
 				<div>Welcome to Dota 2 Statistics ✌(◕‿-)✌</div>
 				<div>Select which data you want to show</div>
 				<button onClick={() => this._getHeroes()}>Get heroes</button>
 				<button onClick={() => this._removeHeroes()}>Remove heroes</button>
-				<p>{data && data.length ? JSON.stringify(data) : '┐( ˘_˘)┌'}</p>
 			</div>
 		);
 	}
