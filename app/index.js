@@ -10,6 +10,11 @@ import logger from 'redux-logger';
 import Home from './components/home';
 import reducer from './reducers';
 
+// Additional imports for webpack
+import 'jquery';
+import 'bootstrap';
+import './styles/_index.scss';
+
 const middleware = [logger, thunk];
 const store = createStore(reducer, applyMiddleware(...middleware));
 
