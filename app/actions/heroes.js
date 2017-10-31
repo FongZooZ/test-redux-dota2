@@ -1,4 +1,4 @@
-import { HeroConstants } from '../constants/action';
+import { HeroConstants, Common } from '../constants/action';
 import axios from 'axios';
 import { apiUrl } from '../core/config';
 
@@ -24,7 +24,7 @@ const fetchHeroesSuccess = (response) => {
 
 const fetchHeroesError = (err) => {
 	return {
-		type: HeroConstants.FETCH_ALL_ERROR,
+		type: Common.SHIT_HAPPEN,
 		payload: err
 	};
 };

@@ -28,7 +28,9 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		heroes: state.heroes
+		heroes: state.heroes,
+		countriesRank: state.countriesRank,
+		common: state.common
 	};
 };
 

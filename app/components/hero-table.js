@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class HeroesTable extends Component {
 	render() {
-		let table;
+		let table = null;
 		let { heroes } = this.props;
 
 		if (heroes && heroes.length) {
@@ -22,7 +22,7 @@ class HeroesTable extends Component {
 			});
 
 			table =
-				<table>
+				<table className="table">
 					<thead>
 						<tr>
 							<td>ID</td>
@@ -40,9 +40,7 @@ class HeroesTable extends Component {
 				</table>;
 		}
 
-		return (
-			<div>{table}</div>
-		);
+		return table;
 	}
 }
 
