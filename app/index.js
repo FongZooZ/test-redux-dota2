@@ -7,7 +7,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-import Home from './components/home';
+import Home from './containers/home';
 import reducer from './reducers';
 
 // Additional imports for webpack
