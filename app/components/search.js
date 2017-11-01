@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { searchPlayer} from '../actions/player';
 
@@ -10,12 +11,14 @@ class Search extends Component {
 				<section className="row search-section">
 					<div className="col-md-4"></div>
 					<div className="col-md-4 search-box">
-						<div className="input-group search-input">
-							<input type="text" className="form-control" id="search-query" placeholder="Search players" aria-label="Search players" onKeyPress={() => this._handleKeyPress} />
-							<span className="input-group-btn">
-								<button className="btn btn-primary" type="button" onClick={() => this._handleSearch()}>Go!</button>
-							</span>
-						</div>
+						<form onSubmit={(e) => this._handleSearchSubmit(e)}>
+							<div className="input-group search-input">
+								<input type="text" className="form-control" id="search-query" placeholder="Search players" aria-label="Search players" />
+								<span className="input-group-btn">
+									<button className="btn btn-primary" type="submit">Go!</button>
+								</span>
+							</div>
+						</form>
 					</div>
 					<div className="col-md-4"></div>
 				</section>
@@ -23,17 +26,19 @@ class Search extends Component {
 		);
 	}
 
-	_handleKeyPress(e) {
-		if (e.key == 'Enter') this._handleSearch();
-	}
+	_handleSearchSubmit(e) {
+		e.preventDefault();
 
-	_handleSearch() {
 		const { dispatch } = this.props;
 
 		let query = $('#search-query').val();
 		dispatch(searchPlayer(query));
 	}
 }
+
+Search.propTypes = {
+	players: PropTypes.array
+};
 
 const mapStateToProps = (state) => {
 	return {
@@ -43,4 +48,4 @@ const mapStateToProps = (state) => {
 
 const ConnectedSearch = connect(mapStateToProps)(Search);
 
-export default Search;
+export default ConnectedSearch;
