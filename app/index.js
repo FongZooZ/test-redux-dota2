@@ -6,9 +6,8 @@ import { Provider, connect } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import createHistory from 'history/createBrowserHistory';
-import { Route } from 'react-router';
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux';
+// import createHistory from 'history/createBrowserHistory';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Home from './containers/home';
 import reducers from './reducers';
@@ -18,20 +17,13 @@ import 'jquery';
 import 'bootstrap';
 import './styles/_index.scss';
 
-const history = createHistory();
-const middleware = [logger, thunk, routerMiddleware(history)];
+// const history = createHistory();
+const middleware = [logger, thunk];
+// middleware.push(routerMiddleware(history));
 
 const store = createStore(reducers, applyMiddleware(...middleware));
 
 const ConnectedHome = connect(mapStateToProps)(Home);
-
-class App extends Component {
-	render() {
-		return (
-			<ConnectedHome />
-		);
-	}
-}
 
 const mapStateToProps = (state) => {
 	return {
@@ -40,14 +32,12 @@ const mapStateToProps = (state) => {
 	};
 };
 
-render(
+const Root = () => (
 	<Provider store={store}>
-		<ConnectedRouter history={history}>
-			<div>
-				<Route exact path="/" component={App} />
-				<Route path="/test" component={App} />
-			</div>
-		</ConnectedRouter>
-	</Provider>,
-	document.getElementById('root')
+		<Router>
+			<Route exact path="/" component={ConnectedHome} />
+		</Router>
+	</Provider>
 );
+
+render(Root(), document.getElementById('root'));

@@ -12,7 +12,7 @@ module.exports = {
 			use: {
 				loader: 'babel-loader',
 				options: {
-					presets: ['env', 'es2015', 'stage-0', 'react']
+					presets: ['env', 'es2015', 'stage-0', 'react'] // fuck
 				}
 			}
 		}, {
@@ -46,6 +46,6 @@ module.exports = {
 	],
 	devtool: 'source-map', // enable sourcemaps
 	devServer: {
-		historyApiFallback: true // serve index.html
+		historyApiFallback: true // Configuring the Fallback URL for React Router
 	}
 };
