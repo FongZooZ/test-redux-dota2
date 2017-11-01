@@ -14,3 +14,9 @@ export const MMRConstants = {
 export const Common = {
 	SHIT_HAPPEN: 'SHIT_HAPPEN'
 };
+
+export const PlayerConstants = {
+	SEARCH_PLAYER: 'SEARCH_PLAYER',
+	SEARCH_PLAYER_SUCCESS: 'SEARCH_PLAYER_SUCCESS',
+	SEARCH_PLAYER_FAILED: 'SEARCH_PLAYER_FAILED'
+};

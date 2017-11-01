@@ -1,5 +1,6 @@
-import { MMRConstants, Common } from '../constants/action';
 import axios from 'axios';
+
+import { MMRConstants, Common } from '../constants/action';
 import { apiUrl } from '../core/config';
 
 export const fetchCountriesRank = () => {

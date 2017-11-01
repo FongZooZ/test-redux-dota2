@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { fetchHeroes, removeHeroes } from '../actions/heroes';
-import { fetchCountriesRank } from '../actions/mmr'
+import { fetchCountriesRank } from '../actions/mmr';
 import HeroesTable from '../components/hero-table';
 import CountryRank from '../components/country-rank';
 
 class Home extends Component {
-	componentWillReceiveProps(nextProps) {
-		if (nextProps.common.stack) console.log(nextProps.common.stack);
-	}
-
 	render() {
 		let { heroes, countriesRank } = this.props;
 
@@ -23,6 +20,7 @@ class Home extends Component {
 				<button className="btn btn-sm btn-primary" onClick={() => this._getCountriesRank()}>Countries MMR</button>
 				<HeroesTable heroes={heroes} />
 				<CountryRank countriesRank={countriesRank} />
+				<a href="/test">Go to search page</a>
 			</div>
 		);
 	}
@@ -47,4 +45,13 @@ Home.propTypes = {
 	heroes: PropTypes.array
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+	return {
+		heroes: state.heroes,
+		countriesRank: state.countriesRank
+	};
+};
+
+const ConnectedHome = connect(mapStateToProps)(Home);
+
+export default ConnectedHome;
