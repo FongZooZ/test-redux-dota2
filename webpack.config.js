@@ -43,5 +43,9 @@ module.exports = {
 			'window.jQuery': 'jquery',
 			Popper: ['popper.js', 'default']
 		})
-	]
+	],
+	devtool: 'source-map', // enable sourcemaps
+	devServer: {
+		historyApiFallback: true // serve index.html
+	}
 };
