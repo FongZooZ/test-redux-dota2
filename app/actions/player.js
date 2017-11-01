@@ -19,13 +19,13 @@ export const searchPlayer = (q) => {
 const searchPlayerSuccess = (response) => {
 	return {
 		type: PlayerConstants.SEARCH_PLAYER_SUCCESS,
-		payload: {data: response.data}
+		payload: response.data
 	};
 };
 
 const searchPlayerFailed = (err) => {
 	return {
 		type: PlayerConstants.SEARCH_PLAYER_FAILED,
-		payload: {err}
+		payload: err
 	};
 };

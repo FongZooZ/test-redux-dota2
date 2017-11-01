@@ -7,7 +7,7 @@ export default function(state = [], action) {
 		case PlayerConstants.SEARCH_PLAYER_SUCCESS:
 			return action.payload;
 		case PlayerConstants.SEARCH_PLAYER_FAILED:
-			return action.payload;
+			return [];
 		default:
 			return state;
 	}
