@@ -11,10 +11,6 @@ export const MMRConstants = {
 	FETCH_COUNTRIES_ERROR: 'FETCH_COUNTRIES_ERROR'
 };
 
-export const Common = {
-	SHIT_HAPPEN: 'SHIT_HAPPEN'
-};
-
 export const PlayerConstants = {
 	SEARCH_PLAYER: 'SEARCH_PLAYER',
 	SEARCH_PLAYER_SUCCESS: 'SEARCH_PLAYER_SUCCESS',

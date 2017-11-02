@@ -20,7 +20,7 @@ class Home extends Component {
 				<button className="btn btn-sm btn-primary" onClick={() => this._getCountriesRank()}>Countries MMR</button>
 				<HeroesTable heroes={heroes} />
 				<CountryRank countriesRank={countriesRank} />
-				<a href="/test">Go to search page</a>
+				<a href="/search">Go to search page</a>
 			</div>
 		);
 	}

@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './containers/home';
 import Search from './components/search';
+import Player from './components/player';
 import reducers from './reducers';
 
 // Additional imports for webpack
@@ -25,7 +26,8 @@ const Root = () => (
 		<Router>
 			<div className="container">
 				<Route exact path="/" component={Home} />
-				<Route path="/test" component={Search} />
+				<Route exact path="/search" component={Search} />
+				<Route path="/player/:accountId" component={Player} />
 			</div>
 		</Router>
 	</Provider>

@@ -16,6 +16,12 @@ export const searchPlayer = (q) => {
 	};
 };
 
+export const getPlayerDetail = (accountId) => {
+	return (dispatch) => {
+
+	};
+};
+
 const searchPlayerSuccess = (response) => {
 	return {
 		type: PlayerConstants.SEARCH_PLAYER_SUCCESS,
