@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { searchPlayer} from '../actions/player';
+import SearchResult from './search-result';
 
 class Search extends Component {
 	render() {
+		let { players } = this.props;
+
 		return (
 			<div className="search">
 				<section className="row search-section">
@@ -22,6 +25,7 @@ class Search extends Component {
 					</div>
 					<div className="col-md-4"></div>
 				</section>
+				<SearchResult players={players} />
 			</div>
 		);
 	}
