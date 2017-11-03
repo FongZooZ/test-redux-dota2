@@ -16,9 +16,9 @@ class Search extends Component {
 					<div className="col-md-4 search-box">
 						<form onSubmit={(e) => this._handleSearchSubmit(e)}>
 							<div className="input-group search-input">
-								<input type="text" className="form-control" id="search-query" placeholder="Search players" aria-label="Search players" />
+								<input type="text" className="form-control" id="search-query" placeholder="Search players" aria-label="Search players" autoComplete="off" />
 								<span className="input-group-btn">
-									<button className="btn btn-primary" type="submit">Go!</button>
+									<button className="btn btn-danger" type="submit">Search!</button>
 								</span>
 							</div>
 						</form>

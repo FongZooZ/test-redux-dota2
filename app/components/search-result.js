@@ -11,7 +11,7 @@ class SearchResult extends Component {
 			players.forEach(player => {
 				let lastPlayed = player.last_match_time ? moment(player.last_match_time).fromNow() : null;
 				playerRows.push(
-					<li>
+					<li key={`account_id_${player.account_id}`}>
 						<a href={`/players/${player.account_id}`}>{player.personaname}</a> <span className="last-played">{lastPlayed}</span>
 					</li>
 				);

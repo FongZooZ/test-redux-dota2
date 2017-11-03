@@ -27,7 +27,7 @@ const Root = () => (
 			<div className="container">
 				<Route exact path="/" component={Home} />
 				<Route exact path="/search" component={Search} />
-				<Route path="/player/:accountId" component={Player} />
+				<Route path="/players/:accountId" component={Player} />
 			</div>
 		</Router>
 	</Provider>

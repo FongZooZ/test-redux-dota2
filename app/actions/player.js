@@ -25,13 +25,15 @@ export const getPlayerDetail = (accountId) => {
 const searchPlayerSuccess = (response) => {
 	return {
 		type: PlayerConstants.SEARCH_PLAYER_SUCCESS,
-		payload: response.data
+		payload: response.data,
+		loading: false
 	};
 };
 
 const searchPlayerFailed = (err) => {
 	return {
 		type: PlayerConstants.SEARCH_PLAYER_FAILED,
-		payload: err
+		payload: err,
+		loading: false
 	};
 };
