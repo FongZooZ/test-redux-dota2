@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 class SearchResult extends Component {
 	render() {
@@ -8,36 +9,26 @@ class SearchResult extends Component {
 			let playerRows = [];
 
 			players.forEach(player => {
+				let lastPlayed = player.last_match_time ? moment(player.last_match_time).fromNow() : null;
 				playerRows.push(
-					<tr key={`player_row_${player.account_id}`}>
-						<td className="player">
-							<img className="player-avatar" src={player.avatarfull} alt={player.personaname} />
-							<a className="player-name" href={`/player/${player.account_id}`}>{player.personaname} ></a>
-							<div className="player-last-match">{player.last_match_time}</div>
-						</td>
-					</tr>
+					<li>
+						<a href={`/players/${player.account_id}`}>{player.personaname}</a> <span className="last-played">{lastPlayed}</span>
+					</li>
 				);
 			});
 
 			searchResult = (
 				<section className="row search-results">
-					<div className="col-md-1"></div>
-					<div className="col-md-10">
+					<div className="col-md-2"></div>
+					<div className="col-md-8">
 						<div className="title">
 							Public Players <span className="subtitle">{players.length} result(s)</span>
 						</div>
-						<table className="table-dark">
-							<thead>
-								<tr>
-									<th>NAME</th>
-								</tr>
-							</thead>
-							<tbody>
-								{playerRows}
-							</tbody>
-						</table>
+						<ol className="results">
+							{playerRows}
+						</ol>
 					</div>
-					<div className="col-md-1"></div>
+					<div className="col-md-2"></div>
 				</section>
 			);
 		}
